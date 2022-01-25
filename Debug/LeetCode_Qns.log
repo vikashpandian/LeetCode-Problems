@@ -1,2 +1,3 @@
-﻿  ConsecutiveNumberSum.cpp
+﻿  DetectCapital.cpp
+C:\Users\Vikash\source\repos\LeetCode_Qns\LeetCode_Qns\DetectCapital.cpp(9,20): warning C4018: '<': signed/unsigned mismatch
   LeetCode_Qns.vcxproj -> C:\Users\Vikash\source\repos\LeetCode_Qns\Debug\LeetCode_Qns.exe

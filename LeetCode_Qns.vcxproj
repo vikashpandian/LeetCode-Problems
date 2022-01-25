@@ -24,7 +24,7 @@
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SolvingWithBrainpower.cpp">
+    <ClCompile Include="DetectCapital.cpp">
       <SubType>
       </SubType>
     </ClCompile>

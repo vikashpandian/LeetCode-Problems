@@ -26,7 +26,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SolvingWithBrainpower.cpp">
+    <ClCompile Include="DetectCapital.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
