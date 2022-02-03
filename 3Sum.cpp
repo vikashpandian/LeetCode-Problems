@@ -2,6 +2,7 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <unordered_set>
 
 using namespace std;
 
@@ -41,6 +42,7 @@ inline int binarySearch(vector<int>& nums, int num, int l, int r) {
 }
 */
 
+/*
 inline int binarySearch(vector<int>& nums, int num, int l, int r) {
     while (l <= r) {
         int mid = (l + r) >> 1;
@@ -79,8 +81,9 @@ vector<vector<int>> threeSum(vector<int>& nums) {
     }
     return res;
 }
+*/
 
-/*
+
 vector<vector<int>> threeSum(vector<int>& nums) {
     vector<vector<int>> res;
     if (nums.size() < 3) return res;
@@ -103,12 +106,72 @@ vector<vector<int>> threeSum(vector<int>& nums) {
     }
     return res;
 }
+
+
+/*
+vector<vector<int>> threeSum(vector<int>& nums) {
+    vector<vector<int>> res;
+    int n = nums.size();
+    if (n < 3) return res;
+    sort(nums.begin(), nums.end());
+    for (int i = 0; i < n && nums[i] <= 0; i++) {
+        auto l = nums.begin() + i + 1, r = nums.end() - 1;
+        while (l < r) {
+            int ltarget = -(nums[i] + *l);
+            if (ltarget <= *r)
+            {
+                if (*(r = lower_bound(l + 1, r + 1, ltarget) - 1) == ltarget)
+                {
+                    res.push_back({ nums[i], *l, ltarget });
+                }
+                l++;
+            }
+            int rtarget = -(nums[i] + *r);
+            if (rtarget >= *l)
+            {
+                if (*(l = upper_bound(l, r, rtarget) - 1) == rtarget)
+                {
+                    res.push_back({ nums[i], rtarget, *r });
+                }
+                r--;
+            }
+        }
+        while (i < n - 1 && nums[i] == nums[i + 1]) i++;
+    }
+    return res;
+}
+*/
+
+/*
+vector<vector<int>> threeSum(vector<int>& nums)
+{
+    int n = nums.size();
+    vector<vector<int>> res;
+    sort(nums.begin(), nums.end());
+    for (int i = 0; i < n && nums[i] <= 0; i++)
+    {
+        unordered_set<int> vals;
+        if (i && (nums[i] == nums[i - 1])) continue;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (j > i + 1 && (nums[j] == nums[j - 1])) continue;
+            int target = -(nums[i] + nums[j]);
+            if (vals.count(target))
+            {
+                res.push_back({ nums[i], target, nums[j] });
+            }
+            vals.insert(nums[j]);
+        }
+    }
+    return res;
+}
 */
 
 int main()
 {
     //vector<int> nums{ -1,-1,0,0,0,1,1,2,2,-2,-2,-3,-3,-1,-4,-4,5,5 };
-    vector<int> nums{ -5,0,0,0,0 };
+    //vector<int> nums{ -5,0,0,0,0 };
+    vector<int> nums{ -1,0,1,2,-1,-4 };
     //vector<int> nums{ 2, 7, 11, 15 };
 
     auto out = threeSum(nums);
