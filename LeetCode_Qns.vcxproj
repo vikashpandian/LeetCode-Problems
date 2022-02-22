@@ -24,7 +24,23 @@
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DetectCapital.cpp">
+    <ClCompile Include="DecodeWays.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="ExcelSheetColumnNumber.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="FixedPoint.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="NumberOfWonderfulSubstrings.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="SumOfSubarrayMinimums.cpp">
       <SubType>
       </SubType>
     </ClCompile>

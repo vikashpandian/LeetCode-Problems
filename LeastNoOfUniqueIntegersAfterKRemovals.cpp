@@ -6,6 +6,7 @@
 
 using namespace std;
 
+/*
 int findLeastNumOfUniqueInts(vector<int>& arr, int k)
 {
     unordered_map<int, int> freq;
@@ -36,6 +37,37 @@ int findLeastNumOfUniqueInts(vector<int>& arr, int k)
         else
         {
             res += kp.second;
+        }
+    }
+    return res;
+}
+*/
+
+int findLeastNumOfUniqueInts(vector<int>& arr, int k)
+{
+    unordered_map<int, int> freq;
+    for (int i : arr)
+    {
+        freq[i]++;
+    }
+    int res = freq.size();
+    map<int, int> rev_freq;
+    for (auto kp : freq)
+    {
+        rev_freq[kp.second]++;
+    }
+    for (auto kp : rev_freq)
+    {
+        if (!k) break;
+        if (kp.second * kp.first <= k)
+        {
+            k -= kp.second * kp.first;
+            res -= kp.second;
+        }
+        else
+        {
+            res -= k / kp.first;
+            k = 0;
         }
     }
     return res;

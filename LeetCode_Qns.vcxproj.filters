@@ -26,7 +26,19 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DetectCapital.cpp">
+    <ClCompile Include="SumOfSubarrayMinimums.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberOfWonderfulSubstrings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DecodeWays.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExcelSheetColumnNumber.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FixedPoint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
